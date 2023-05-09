@@ -27,8 +27,8 @@ const blogs: IBlog[] = [
   },
 ]
 
-import {NextResponse} from 'next/server'
+import {NextRequest, NextResponse} from 'next/server'
 
-export async function GET() { // Must be UPPERCASE
+export async function GET(request: NextRequest) { // Must be UPPERCASE
   return NextResponse.json(blogs)
 }
