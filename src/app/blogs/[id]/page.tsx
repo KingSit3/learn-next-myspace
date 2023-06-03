@@ -1,10 +1,7 @@
 
-
 const getBlog = async (id:number) => {
   const res = await fetch('http://localhost:3000/api/blogs/2', {
-    // body: JSON.stringify({
-    //   id: id
-    // })
+      cache: 'no-cache'
   })
   return res.json()
 }
