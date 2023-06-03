@@ -7,7 +7,7 @@ const getBlogs = async () => {
 }
 
 
-export default async () => {
+export default async function blogs(){
 
   const blogs = await getBlogs()
 
@@ -17,7 +17,7 @@ export default async () => {
       <div className="space-y-4">
         {blogs?.map((blog:IBlog) => {
           return (
-            <div>
+            <div key={blog.id}>
               <Link href={`/blogs/${blog.id}`}>
                 <div key={blog.id} className="bg-red-500 p-2 rounded">
                   <h1>{blog.title}</h1>

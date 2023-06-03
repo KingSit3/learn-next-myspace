@@ -30,11 +30,11 @@ const blogs: IBlog[] = [
 import {NextResponse} from 'next/server'
 
 export async function GET(request: any) { // Must be UPPERCASE
-  console.log(request);
+  console.log(request.id);
   
-  if (request?.id){
-    // const blog = blogs.find((blog) => blog.id == request.id)
-    return NextResponse.json(blogs)
+  if (request?.params?.id){
+    const blog = blogs.find((blog) => blog.id == request.id)
+    return NextResponse.json(blog)
   }
   
   
